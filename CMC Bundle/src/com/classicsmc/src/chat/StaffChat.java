@@ -2,6 +2,7 @@ package com.classicsmc.src.chat;
 
 import java.util.ArrayList;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -40,6 +41,13 @@ public class StaffChat implements CommandExecutor {
 							return true;
 							
 						}
+						
+						Bukkit.broadcast(ChatColor.DARK_GRAY + "[" + ChatColor.DARK_AQUA + "Staff" + 
+								ChatColor.GOLD + "Chat" + ChatColor.DARK_GRAY 
+								+ "] " + ChatColor.DARK_AQUA + player.getName()
+								+ ChatColor.DARK_GRAY + ":" + ChatColor.AQUA + buildMessage(args), "classicsmc.staffchat");
+						
+						
 
 				} 
 				
@@ -48,6 +56,22 @@ public class StaffChat implements CommandExecutor {
 		
 	}
 	
-	
+	private String buildMessage(String[] args) {
+		
+		String newMessage;
+		
+		StringBuilder sb = new StringBuilder();
+		
+		for(String s : args) {
+			
+			sb.append(' ').append(s);
+			
+		}
+		
+		newMessage = sb.toString();
+		
+		return newMessage;
+		
+	}
 	
 }

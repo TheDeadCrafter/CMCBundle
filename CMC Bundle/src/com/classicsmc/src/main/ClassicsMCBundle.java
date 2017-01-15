@@ -8,6 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.classicsmc.src.chat.ChatEvents;
+import com.classicsmc.src.chat.StaffChat;
 import com.classicsmc.src.survival.SurvivalCraftLoader;
 
 public class ClassicsMCBundle extends JavaPlugin implements Listener {
@@ -25,6 +26,9 @@ public class ClassicsMCBundle extends JavaPlugin implements Listener {
 		loader.initCrafting(this);
 		
 		Bukkit.getServer().getPluginManager().registerEvents(new ChatEvents(), this);
+		
+		this.getCommand("sc").setExecutor(new StaffChat());
+		this.getCommand("staffchat").setExecutor(new StaffChat());
 		
 	}
 	
@@ -46,6 +50,7 @@ public class ClassicsMCBundle extends JavaPlugin implements Listener {
 		
 	}
 
+	@SuppressWarnings("unused")
 	private void helpScreen(CommandSender sender) {
 		
 		sender.sendMessage(msgTag + "");
