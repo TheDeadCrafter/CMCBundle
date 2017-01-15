@@ -1,0 +1,5 @@
+name: ClassicsMCBundle
+main: com.classicsmc.src.main.ClassicsMCBundle
+version: 1.0.1
+commands:
+  
