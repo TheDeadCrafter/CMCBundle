@@ -1,0 +1,19 @@
+name: ClassicsMCBundle
+main: com.classicsmc.src.main.ClassicsMCBundle
+version: 1.0.1
+commands:
+  staffchat:
+    description: Talk or Toggle StaffChat.
+    aliases: [sc]
+    permission: classicsmc.staffchat
+permissions:
+  classicsmc.*:
+    description: All ClassicsMC Commands.
+    children:
+      classicsmc.staffchat
+  classicsmc.staffchat:
+    description: Allows access to the staffchat.
+    default: false
+  classicsmc.antixray:
+    description: Allows players to see when somemines certain blocks
+    default: false 
